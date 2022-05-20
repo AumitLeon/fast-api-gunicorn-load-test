@@ -1,0 +1,14 @@
+{
+  "name": "fast-api-concurrency-test",
+  "version": "0.1.0",
+  "description": "Fast API concurrency load testing",
+  "main": "index.js",
+  "author": "Aumit Leon",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build -t fast-api-concurrency-test .",
+    "docker:run": "docker run -p 80:80 fast-api-concurrency-test",
+    "exec:loadtest": "ab -c 100 -n 1000 localhost/loadtest"
+  }
+}
