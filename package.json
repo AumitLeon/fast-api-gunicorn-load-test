@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker:build": "docker build -t fast-api-concurrency-test .",
-    "docker:run": "docker run -p 80:80 fast-api-concurrency-test",
-    "exec:loadtest": "ab -c 100 -n 1000 localhost/loadtest"
+    "docker:run": "docker run --name fast-api-concurrency-test -p 80:80 --cpus='1' -m 2048m fast-api-concurrency-test",
+    "exec:sync-loadtest": "ab -c 100 -n 1000 localhost/sync-loadtest",
+    "exec:async-loadtest": "ab -c 100 -n 10000 localhost/async-loadtest"
   }
 }
